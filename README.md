@@ -32,13 +32,13 @@ If Flutter is installed, it will display the version. If not, you can download a
 1. Clone this repository:
 
   ```bash
-  git clone https://github.com/Hemanpmanny/Sahaya--GDSC-Solution-Challenge-2024.git
+  git clone https://github.com/Bhuvankambley2003/sahaya.github.io
   ```
 
 2. Change into the project directory inside the Terminal:
 
   ```bash
- cd Sahaya--GDSC-Solution-Challenge-2024
+ cd sahaya.github.io
   ```
 
 3. Get the dependencies:

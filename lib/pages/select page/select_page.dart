@@ -9,6 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:groupchat/ChatBot/chat_bot.dart';
 import 'package:groupchat/Food%20Donation/food_donation.dart';
 import 'package:groupchat/Government/home_page.dart';
+import 'package:groupchat/barter/donations.dart';
 import 'package:groupchat/helper/helper_function.dart';
 import 'package:groupchat/item%20donation/home_item_donation.dart';
 import 'package:groupchat/library/app.dart';
@@ -19,7 +20,6 @@ import 'package:groupchat/services/auth_service.dart';
 import 'package:groupchat/services/data_base_service.dart';
 import 'package:groupchat/widgets/widgets.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../gadget donation/home_donate.dart';
 
 class SelectPage extends StatefulWidget {
@@ -185,54 +185,83 @@ class _SelectPageState extends State<SelectPage> {
       body: Container(
         padding: const EdgeInsets.all(20.0),
         child: GridView.count(
-          crossAxisCount: 2,
+          crossAxisCount: 1,
           crossAxisSpacing: 20.0,
           mainAxisSpacing: 20.0,
           children: [
-            GestureDetector(
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => const Home()),
+            //     );
+            //   },
+            //   child: Container(
+            //     padding: const EdgeInsets.only(top: 5),
+            //     decoration: BoxDecoration(
+            //         border: Border.all(color: Colors.black, width: 1.5),
+            //         borderRadius: BorderRadius.circular(15)),
+            //     height: 100,
+            //     width: 100,
+            //     child: Column(children: [
+            //       Image.asset('assets/images/recieve.png',
+            //           width: 120, height: 120),
+            //       const Text(
+            //         'Donate ',
+            //         style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            //       )
+            //     ]),
+            //   ),
+            // ),
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => const HomeItem()),
+            //     );
+            //   },
+            //   child: Container(
+            //     padding: const EdgeInsets.only(top: 5),
+            //     decoration: BoxDecoration(
+            //         border: Border.all(color: Colors.black, width: 1.5),
+            //         borderRadius: BorderRadius.circular(15)),
+            //     height: 100,
+            //     width: 100,
+            //     child: Column(children: [
+            //       Image.asset('assets/images/recieve.png',
+            //           width: 200, height: 120),
+            //       const Text(
+            //         'WishList ',
+            //         style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            //       )
+            //     ]),
+            //   ),
+            // ),
+                        GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Home()),
+                  MaterialPageRoute(builder: (context) => DonationsPage()),
                 );
               },
               child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
-                child: Column(children: [
-                  Image.asset('assets/images/recieve.png', width: 120, height: 120),
-                  const Text(
-                    'Donate ',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                  )
-                ]),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeItem()),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
-                child: Column(children: [
-                  Image.asset('assets/images/recieve.png', width: 200, height: 120),
-                  const Text(
-                    'WishList ',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                  )
-                ]),
+               padding: const EdgeInsets.all(20),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Color.fromARGB(255, 223, 222, 222))),
+                child: SingleChildScrollView(
+                  child: Column(children: [
+                    Image.asset('assets/images/recieve.png', width: 220, height: 220),
+                    const Text(
+                      'donations',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
+                    )
+                  ]),
+                ),
               ),
             ),
             GestureDetector(
@@ -243,17 +272,18 @@ class _SelectPageState extends State<SelectPage> {
                 );
               },
               child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
+                padding: const EdgeInsets.all(20),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Color.fromARGB(255, 223, 222, 222))),
                 child: Column(children: [
-                  Image.asset('assets/community.jpg', width: 160, height: 120),
+                  Image.asset('assets/community.jpg', width: 260, height: 220),
                   const Text(
                     'Community',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
                   )
                 ]),
               ),
@@ -266,93 +296,70 @@ class _SelectPageState extends State<SelectPage> {
                 );
               },
               child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
+               padding: const EdgeInsets.all(20),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all
+                            (
+                                color: Color.fromARGB(255, 223, 222, 222))),
                 child: Column(children: [
-                  Image.asset('assets/library.jpg', width: 200, height: 120),
+                  Image.asset('assets/library.jpg', width: 200, height: 220),
                   const Text(
                     'E-Library',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
                   )
                 ]),
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FoodDonation()),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
-                child: Column(children: [
-                  Image.asset('assets/food.jpg', width: 120, height: 120),
-                  const Text(
-                    'Food Donation',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                  )
-                ]),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home_page()),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
-                child: SingleChildScrollView(
-                  child: Column(children: [
-                    Image.asset('assets/govt.png', width: 120, height: 120),
-                    const Text(
-                      'Govt Schemes',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                    )
-                  ]),
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChatBot()),
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.only(top: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1.5),
-                    borderRadius: BorderRadius.circular(15)),
-                height: 100,
-                width: 100,
-                child: Column(children: [
-                  Image.asset('assets/chatbot.jpg', width: 170, height: 120),
-                  const Text(
-                    'ChatBot',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
-                  )
-                ]),
-              ),
-            ),
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => FoodDonation()),
+            //     );
+            //   },
+            //   child: Container(
+            //     padding: const EdgeInsets.only(top: 5),
+            //     decoration: BoxDecoration(
+            //         border: Border.all(color: Colors.black, width: 1.5),
+            //         borderRadius: BorderRadius.circular(15)),
+            //     height: 100,
+            //     width: 100,
+            //     child: Column(children: [
+            //       Image.asset('assets/food.jpg', width: 120, height: 120),
+            //       const Text(
+            //         'Food Donation',
+            //         style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            //       )
+            //     ]),
+            //   ),
+            // ),
+
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => ChatBot()),
+            //     );
+            //   },
+            //   child: Container(
+            //     padding: const EdgeInsets.only(top: 5),
+            //     decoration: BoxDecoration(
+            //         border: Border.all(color: Colors.black, width: 1.5),
+            //         borderRadius: BorderRadius.circular(15)),
+            //     height: 100,
+            //     width: 100,
+            //     child: Column(children: [
+            //       Image.asset('assets/chatbot.jpg', width: 170, height: 120),
+            //       const Text(
+            //         'ChatBot',
+            //         style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+            //       )
+            //     ]),
+            //   ),
+            // ),
           ],
         ),
       ),

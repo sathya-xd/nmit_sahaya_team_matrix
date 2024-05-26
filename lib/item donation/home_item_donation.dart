@@ -156,7 +156,7 @@ class _HomeState extends State<HomeItem> {
                             height: 10,
                           ),
                           Text(
-                            "Current items: " + ds["CurrentItems"],
+                            "Category: " + ds["CurrentItems"],
                             style: const TextStyle(
                                 color: Colors.blue,
                                 fontWeight: FontWeight.w400,
@@ -260,7 +260,7 @@ class _HomeState extends State<HomeItem> {
             Padding(
               padding: const EdgeInsets.only(left: 0),
               child: Text(
-                "GadgetDonation",
+                "Enlist Your needs",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 0, 0, 0)),

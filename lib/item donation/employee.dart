@@ -190,7 +190,7 @@ class _employeeState extends State<employee> {
                 height: 20,
               ),
               const Text(
-                "Current Items",
+                "Category",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
               const SizedBox(

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "963610553573",
-    "project_id": "groupchat-96e07",
-    "storage_bucket": "groupchat-96e07.appspot.com"
+    "project_number": "820520644149",
+    "project_id": "sahaya-86dcd",
+    "storage_bucket": "sahaya-86dcd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:963610553573:android:c185fe52fdcf9c3aab780c",
+        "mobilesdk_app_id": "1:820520644149:android:2c9fee4da9fa3a68cc8b7c",
         "android_client_info": {
           "package_name": "com.example.groupchat"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCULvpR0-OcwJJ9CN6CFw_iHuzYXgL-PHA"
+          "current_key": "AIzaSyCMJoSsVKpGqMbeV5-LYOsWX2Yw57GJC0Y"
         }
       ],
       "services": {

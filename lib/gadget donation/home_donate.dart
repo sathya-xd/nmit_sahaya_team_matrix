@@ -14,8 +14,18 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
-
+    String globalVariable = "";
 class _HomeState extends State<Home> {
+  Map<String, dynamic> employeeInfoMap = {
+                        // "Name": namecontroller.text,
+                        // "Age": agecontroller.text,
+                        // "ID": Id,
+                        // "Location": locationcontroller.text,
+                        // "IamgeURL": imageUrl,
+                        // "Phone": phonecontroller.text,
+                        // "CurrentItems": currentontroller.text,
+                        // "NeedItems": needcontroller.text
+                      };
   TextEditingController namecontroller = TextEditingController();
   TextEditingController agecontroller = TextEditingController();
   TextEditingController locationcontroller = TextEditingController();
@@ -28,6 +38,28 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     employeeStream = DataBaseMethods().getEmployeeDetailes();
+  }
+
+  void _runFilter(String enteredKeyword) {
+    globalVariable=enteredKeyword;
+    List<Map<String, dynamic>> employeeInfoMap = [];
+    if (enteredKeyword.isEmpty) {
+      setState(() {
+        employeeStream = DataBaseMethods().getEmployeeDetailes();
+      });
+    }
+
+    employeeInfoMap.forEach((employeeInfoMap) {
+      if (employeeInfoMap["Name"].contains(enteredKeyword)) {
+        setState(() {
+          employeeStream = DataBaseMethods().getEmployeeDetailes();
+        });
+      }
+      setState(() {
+        employeeStream = DataBaseMethods().getEmployeeDetailes();
+      
+      });
+    });
   }
 
   Widget allEmployeeDetailes() {
@@ -43,11 +75,12 @@ class _HomeState extends State<Home> {
               child: Text("No data"),
             );
           }
-
+          var filteredDocs = snapshot.data!.docs.where((doc) => doc['Name'].toString().contains(globalVariable)).toList();
           return ListView.builder(
-              itemCount: snapshot.data!.docs.length,
-              itemBuilder: (context, index) {
-                DocumentSnapshot ds = snapshot.data!.docs[index];
+            
+              itemCount: filteredDocs.length,
+  itemBuilder: (context, index) {
+    DocumentSnapshot ds = filteredDocs[index];
 
                 return Container(
                     decoration: BoxDecoration(
@@ -255,6 +288,10 @@ class _HomeState extends State<Home> {
         margin: const EdgeInsets.only(top: 20, left: 20, right: 20),
         child: Column(
           children: [
+            Text(
+              'Donate for Reuse',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
             Expanded(child: allEmployeeDetailes()),
           ],
         ),

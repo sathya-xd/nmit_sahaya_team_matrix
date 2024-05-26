@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,38 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCasAJOUrISU5xg8mzi7P8zp-nGW3kvq-o',
-    appId: '1:963610553573:web:acf30c87ef6bceeaab780c',
-    messagingSenderId: '963610553573',
-    projectId: 'groupchat-96e07',
-    authDomain: 'groupchat-96e07.firebaseapp.com',
-    storageBucket: 'groupchat-96e07.appspot.com',
-    measurementId: 'G-XKNPB8EQGX',
+    apiKey: 'AIzaSyDVImI_yK_C04pndQOtI1IwTShVocO4OT4',
+    appId: '1:820520644149:web:1bfb31b94253160bcc8b7c',
+    messagingSenderId: '820520644149',
+    projectId: 'sahaya-86dcd',
+    authDomain: 'sahaya-86dcd.firebaseapp.com',
+    storageBucket: 'sahaya-86dcd.appspot.com',
+    measurementId: 'G-LLEMBXEVDR',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCULvpR0-OcwJJ9CN6CFw_iHuzYXgL-PHA',
-    appId: '1:963610553573:android:c185fe52fdcf9c3aab780c',
-    messagingSenderId: '963610553573',
-    projectId: 'groupchat-96e07',
-    storageBucket: 'groupchat-96e07.appspot.com',
+    apiKey: 'AIzaSyCMJoSsVKpGqMbeV5-LYOsWX2Yw57GJC0Y',
+    appId: '1:820520644149:android:2c9fee4da9fa3a68cc8b7c',
+    messagingSenderId: '820520644149',
+    projectId: 'sahaya-86dcd',
+    storageBucket: 'sahaya-86dcd.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD3z5wAKZf9AuuFmiD0tkc0Fyvbz2uZCBs',
-    appId: '1:963610553573:ios:2bfc77fc27ada183ab780c',
-    messagingSenderId: '963610553573',
-    projectId: 'groupchat-96e07',
-    storageBucket: 'groupchat-96e07.appspot.com',
+    apiKey: 'AIzaSyDENoFE9c0vdClBRx7fmra7I32y-rekOSA',
+    appId: '1:820520644149:ios:8296fdfc978a8910cc8b7c',
+    messagingSenderId: '820520644149',
+    projectId: 'sahaya-86dcd',
+    storageBucket: 'sahaya-86dcd.appspot.com',
     iosBundleId: 'com.example.groupchat',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD3z5wAKZf9AuuFmiD0tkc0Fyvbz2uZCBs',
-    appId: '1:963610553573:ios:9682cf241b179800ab780c',
-    messagingSenderId: '963610553573',
-    projectId: 'groupchat-96e07',
-    storageBucket: 'groupchat-96e07.appspot.com',
-    iosBundleId: 'com.example.groupchat.RunnerTests',
+    apiKey: 'AIzaSyDENoFE9c0vdClBRx7fmra7I32y-rekOSA',
+    appId: '1:820520644149:ios:8296fdfc978a8910cc8b7c',
+    messagingSenderId: '820520644149',
+    projectId: 'sahaya-86dcd',
+    storageBucket: 'sahaya-86dcd.appspot.com',
+    iosBundleId: 'com.example.groupchat',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDVImI_yK_C04pndQOtI1IwTShVocO4OT4',
+    appId: '1:820520644149:web:d309e78bf2c2afdfcc8b7c',
+    messagingSenderId: '820520644149',
+    projectId: 'sahaya-86dcd',
+    authDomain: 'sahaya-86dcd.firebaseapp.com',
+    storageBucket: 'sahaya-86dcd.appspot.com',
+    measurementId: 'G-57H37DRVY8',
+  );
+
 }
